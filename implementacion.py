@@ -15,8 +15,8 @@ def predict():
     # Obtener la reseña desde la solicitud
     data = request.json
     review = data.get('review', '')
-     if len(review) > 500:
-        return jsonify({'error': 'Reseña demasiado larga. El máximo permitido es 500 caracteres.'}), 400
+     if len(review) > 200:
+        return jsonify({'error': 'Reseña demasiado larga. El máximo permitido es 200 caracteres.'}), 400
 
     if not review:
         return jsonify({'error': 'No review provided'}), 400
